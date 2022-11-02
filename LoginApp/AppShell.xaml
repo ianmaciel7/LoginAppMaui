@@ -3,12 +3,24 @@
     x:Class="LoginApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:LoginApp"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:pages="clr-namespace:LoginApp.Views"
+    >
+
 
     <ShellContent
-        Title="LoginApp"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate pages:LoginPage}"
+        Route="login"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        />
+
+    <FlyoutItem Title="home">
+        <ShellContent
+            Route="home"
+            ContentTemplate="{DataTemplate pages:HomePage}"
+            />
+    </FlyoutItem>
+
+
 
 </Shell>
